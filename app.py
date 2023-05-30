@@ -10,11 +10,8 @@ def transcript_extract(video_name):
     # Load the video file
     v_format= video_name.split(".")[-1]
     video = AudioSegment.from_file(video_name, format=v_format)
-    print("1")
     audio = video.set_channels(1).set_frame_rate(16000).set_sample_width(2)
-    print("1")
     audio.export("audio.wav", format="wav")
-    print("1")
 
     # Initialize recognizer class (for recognizing the speech)
     r = sr.Recognizer()
@@ -24,15 +21,6 @@ def transcript_extract(video_name):
         audio_text = r.record(source)
     # Recognize the speech in the audio
     text = r.recognize_google(audio_text, language='en-US')
-
-   #  # Print the transcript
-   #  file_name = "transcription.txt"
-
-   #  with open(file_name, "w") as file:
-   #      # Write to the file
-   #      file.write(text)
-   #  # Open the file for editing by the user
-   #  os.system(f"cat {file_name}")
     return text
 
 
