@@ -17,3 +17,7 @@ Make sure you have Docker installed on your server before proceeding with the fo
 `docker run -p 5000:5000 flask-app:latest`
 
 These commands will set up and run the speech recognition application on your server.
+
+## Use
+
+go to http://localhost:5000/upload and choose a video file to upload 
